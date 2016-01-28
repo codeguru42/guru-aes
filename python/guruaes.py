@@ -31,3 +31,4 @@ def invertTable(table):
 
 eTable = take(256, repeat(x3, 1))
 logTable = invertTable(eTable)
+logTable[1] = 0x00
