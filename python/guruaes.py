@@ -32,3 +32,4 @@ def invertTable(table):
 eTable = take(256, repeat(x3, 1))
 logTable = invertTable(eTable)
 logTable[1] = 0x00
+invTable = [0] + map(lambda x : eTable[0xff - logTable[x]], range(0x01, 0xff))
