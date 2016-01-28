@@ -93,7 +93,7 @@ class TablesTest(unittest.TestCase):
     self.assertEqual(TablesTest.sbox, guruaes.sbox)
 
 def printTable(table):
-  print(map(lambda row : map(hex, row), table)
+  print(map(lambda row : map(hex, row), table))
 
 if __name__ == "__main__":
   unittest.main()
