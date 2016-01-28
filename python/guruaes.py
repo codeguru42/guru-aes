@@ -15,7 +15,7 @@ def take(n, seq):
 # GF(2**8)
 def xtime(a):
   b = a << 1
-  if b < 256:
+  if b <= 0xff:
     return b
   return b ^ 0x11b
 
@@ -39,5 +39,5 @@ def affine(x):
 eTable = take(256, repeat(x3, 1))
 logTable = invertTable(eTable)
 logTable[1] = 0x00
-invTable = [0] + map(lambda x : eTable[0xff - logTable[x]], range(0x01, 0xff))
+invTable = [0] + map(lambda x : eTable[0xff - logTable[x]], range(0x01, 0x100))
 sbox = map(lambda x : affine(invTable[x]), range(0xff))
