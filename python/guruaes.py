@@ -21,3 +21,5 @@ def xtime(a):
 
 def x3(a):
   return xtime(a) ^ a
+
+eTable = take(256, repeat(x3, 1))
