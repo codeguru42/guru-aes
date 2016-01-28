@@ -1,5 +1,8 @@
-def main():
-  print "Hello, World!"
+import unittest
+import guruaes
+
+class AesTest(unittest.TestCase):
+  pass
 
 if __name__ == "__main__":
-  main()
+  unittest.main()
