@@ -21,7 +21,7 @@ class TablesTest(unittest.TestCase):
            ]
   
   def testETable(self):
-    self.assertEqual(eTable, guruaes.eTable)
+    self.assertEqual(TablesTest.eTable, guruaes.eTable)
 
 if __name__ == "__main__":
   unittest.main()
