@@ -22,6 +22,11 @@ def xtime(a):
 def x3(a):
   return xtime(a) ^ a
 
+def gf(a, b):
+  if a == 0x00 or b == 0x00:
+    return 0x00
+  return eTable[(logTable[a] + logTable[b]) % 0xff]
+
 def initGFTable():
   gfTable = {}
   for x in [0x01, 0x02, 0x03, 0x09, 0x0b, 0x0d, 0x0e]:
