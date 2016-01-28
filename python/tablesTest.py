@@ -81,10 +81,19 @@ class TablesTest(unittest.TestCase):
     self.assertEqual(TablesTest.logTable, guruaes.logTable)
   
   def testInvTable(self):
+    print("\ntestInvTable()")
+    print("\nexpected:")
+    printTable(TablesTest.invTable)
+    print("\nactual:")
+    print(guruaes.invTable)
+    
     self.assertEqual(TablesTest.invTable, guruaes.invTable)
 
   def testSbox(self):
     self.assertEqual(TablesTest.sbox, guruaes.sbox)
+
+def printTable(table):
+  print(map(lambda row : map(hex, row), table)
 
 if __name__ == "__main__":
   unittest.main()
