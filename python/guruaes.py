@@ -41,4 +41,4 @@ logTable = invertTable(eTable)
 logTable[1] = 0x00
 invTable = [0] + map(lambda x : eTable[0xff - logTable[x]], range(0x01, 0x100))
 sbox = map(lambda x : affine(invTable[x]), range(0x100))
-invSbox = inverTable(sbox)
+invSbox = invertTable(sbox)
