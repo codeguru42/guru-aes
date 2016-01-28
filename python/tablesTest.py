@@ -1,5 +1,5 @@
 import unittest
-import guruaes
+import aestables
 
 class TablesTest(unittest.TestCase):
   eTable = [ 0x01, 0x03, 0x05, 0x0f, 0x11, 0x33, 0x55, 0xff, 0x1a, 0x2e, 0x72, 0x96, 0xa1, 0xf8, 0x13, 0x35 
@@ -93,19 +93,19 @@ class TablesTest(unittest.TestCase):
             ]
 
   def testETable(self):
-    self.assertEqual(TablesTest.eTable, guruaes.eTable)
+    self.assertEqual(TablesTest.eTable, aestables.eTable)
 
   def testLogTable(self):
-    self.assertEqual(TablesTest.logTable, guruaes.logTable)
+    self.assertEqual(TablesTest.logTable, aestables.logTable)
   
   def testInvTable(self):
-    self.assertEqual(TablesTest.invTable, guruaes.invTable)
+    self.assertEqual(TablesTest.invTable, aestables.invTable)
 
   def testSbox(self):
-    self.assertEqual(TablesTest.sbox, guruaes.sbox)
+    self.assertEqual(TablesTest.sbox, aestables.sbox)
 
   def testInvSbox(self):
-    self.assertEqual(TablesTest.invSbox, guruaes.invSbox)
+    self.assertEqual(TablesTest.invSbox, aestables.invSbox)
 
 def printTable(table):
   print(map(hex, table))
