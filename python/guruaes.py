@@ -29,7 +29,15 @@ def invertTable(table):
     inverse[y] = x
   return inverse
 
+def rotater(x, n = 1):
+  return (x >> n) | ((x << (8 - n)) & 0xff)
+
+def affine(x):
+  bytes = map(rotater, [x] * 4, range(4, 8))
+  return x ^ reduce(int.__xor__, bytes) ^ 0x63
+
 eTable = take(256, repeat(x3, 1))
 logTable = invertTable(eTable)
 logTable[1] = 0x00
 invTable = [0] + map(lambda x : eTable[0xff - logTable[x]], range(0x01, 0xff))
+sbox = map(lambda x : affine(invTable[x]), range(0xff))
