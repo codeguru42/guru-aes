@@ -1,4 +1,4 @@
-def TablesTest(unittest.TestCase):
+class TablesTest(unittest.TestCase):
   def testAlogTable(self):
     pass
 
