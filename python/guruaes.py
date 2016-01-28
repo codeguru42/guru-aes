@@ -22,6 +22,12 @@ def xtime(a):
 def x3(a):
   return xtime(a) ^ a
 
+def initGFTable():
+  gfTable = {}
+  for x in [0x01, 0x02, 0x03, 0x09, 0x0b, 0x0d, 0x0e]:
+    gfTable[x] = map(lambda y : gf(x, y), range(0x100))
+  return gfTable
+
 # Tables
 def invertTable(table):
   inverse = [0] * len(table)
@@ -42,3 +48,4 @@ logTable[1] = 0x00
 invTable = [0] + map(lambda x : eTable[0xff - logTable[x]], range(0x01, 0x100))
 sbox = map(lambda x : affine(invTable[x]), range(0x100))
 invSbox = invertTable(sbox)
+gfTable = initGFTable()
