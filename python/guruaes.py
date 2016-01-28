@@ -23,7 +23,7 @@ def x3(a):
   return xtime(a) ^ a
 
 # Tables
-def invertTAble(table):
+def invertTable(table):
   inverse = [0] * len(table)
   for x, y in enumerate(table):
     inverse[y] = x
