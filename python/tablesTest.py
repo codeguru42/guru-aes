@@ -85,7 +85,7 @@ class TablesTest(unittest.TestCase):
     print("\nexpected:")
     printTable(TablesTest.invTable)
     print("\nactual:")
-    print(guruaes.invTable)
+    printTable(guruaes.invTable)
     
     self.assertEqual(TablesTest.invTable, guruaes.invTable)
 
