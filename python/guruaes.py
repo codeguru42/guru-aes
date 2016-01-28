@@ -22,4 +22,12 @@ def xtime(a):
 def x3(a):
   return xtime(a) ^ a
 
+# Tables
+def invertTAble(table):
+  inverse = [0] * len(table)
+  for x, y in enumerate(table):
+    inverse[y] = x
+  return inverse
+
 eTable = take(256, repeat(x3, 1))
+logTable = invertTable(eTable)
